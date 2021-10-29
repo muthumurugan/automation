@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ae89ada-142e-44ff-9939-6b51dc9e6b8e" name="Default Changelist" comment="" />
+    <list default="true" id="6ae89ada-142e-44ff-9939-6b51dc9e6b8e" name="Default Changelist" comment="e">
+      <change beforePath="$PROJECT_DIR$/DB_DELETE/chaining_delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB_DELETE/chaining_delete.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +18,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1c844ErFs0lQnGXsximZQm9ApDy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -29,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../vinod ui/UI-Automation-master/UI-Automation-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -160,6 +162,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -186,59 +189,17 @@
       </list>
     </option>
   </component>
-  <component name="WindowStateProjectService">
-    <state width="1364" height="440" key="DebuggerActiveHint" timestamp="1618317523803">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1364" height="440" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1618317523803" />
-    <state width="1345" height="205" key="GridCell.Tab.0.bottom" timestamp="1622007717040">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="205" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1622007717040" />
-    <state width="1345" height="205" key="GridCell.Tab.0.center" timestamp="1622007717039">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="205" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1622007717039" />
-    <state width="1345" height="205" key="GridCell.Tab.0.left" timestamp="1622007717039">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="205" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1622007717039" />
-    <state width="1345" height="205" key="GridCell.Tab.0.right" timestamp="1622007717040">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="205" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1622007717040" />
-    <state width="1345" height="243" key="GridCell.Tab.1.bottom" timestamp="1620826610769">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="243" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1620826610769" />
-    <state width="1345" height="243" key="GridCell.Tab.1.center" timestamp="1620826610769">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="243" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1620826610769" />
-    <state width="1345" height="243" key="GridCell.Tab.1.left" timestamp="1620826610768">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="243" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1620826610768" />
-    <state width="1345" height="243" key="GridCell.Tab.1.right" timestamp="1620826610769">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1345" height="243" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1620826610769" />
-    <state x="404" y="105" width="540" height="524" key="StructurePopup" timestamp="1619501213898">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="404" y="105" width="540" height="524" key="StructurePopup/0.0.1366.728@0.0.1366.728" timestamp="1619501213898" />
-    <state x="283" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1619779172985">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="283" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1619779172985" />
-    <state x="200" y="93" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1618399777356">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="200" y="93" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1618399777356" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1619596104168">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1619596104168" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
