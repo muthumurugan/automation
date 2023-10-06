@@ -10,7 +10,7 @@ class VersantQuickScreener:
 
     def __init__(self):
         self.url = "https://pearsonstg.hirepro.in/assessment/#/assess/login/eyJhbGlhcyI6ImF1dG9tYXRpb24ifQ%3D%3D"
-        self.path = r"F:\qa_automation\chromedriver.exe"
+        self.path = r"D:\automation\automation\chromedriver.exe"
         write_excel_object.save_result(output_path_ui_vet_qs)
         # 0th Row Header
         header = ['VET Quick Screener']
