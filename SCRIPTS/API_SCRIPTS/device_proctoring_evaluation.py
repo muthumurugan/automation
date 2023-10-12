@@ -88,7 +88,7 @@ context_id = context_id['data']['ContextId']
 print(context_id)
 current_job_status = 'Pending'
 
-while current_job_status == 'Pending':
+while current_job_status != 'SUCCESS':
     current_job_status = CrpoCommon.job_status(login_token, context_id)
     current_job_status = current_job_status['data']['JobState']
     print("_________________ Proctor Evaluation is in Progress _______________________")

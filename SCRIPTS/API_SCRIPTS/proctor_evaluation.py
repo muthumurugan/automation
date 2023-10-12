@@ -42,6 +42,7 @@ class ProctorEvaluation:
         write_excel_object.current_status_color = write_excel_object.green_color
         write_excel_object.current_status = "Pass"
         tu_id = int(current_excel_data.get('testUserId'))
+        print(tu_id)
         tu_proctor_details = crpo_common_obj.proctor_evaluation_detail(token, tu_id)
         proctorDetail = tu_proctor_details['data']['proctorDetail']
         image_proctoring_status = proctorDetail.get('imgSuspicious')
@@ -49,7 +50,7 @@ class ProctorEvaluation:
         self.suspicious_or_not_supicious(image_proctoring_status, False)
         write_excel_object.compare_results_and_write_vertically(current_excel_data.get('imageProctoringStatus'),
                                                                 self.status, row_count, 5)
-        video_proctoring_status = proctorDetail.get('faceSuspicious')
+        video_proctoring_status =   proctorDetail.get('faceSuspicious')
         self.suspicious_or_not_supicious(video_proctoring_status, False)
         write_excel_object.compare_results_and_write_vertically(current_excel_data.get('videoProctoringStatus'),
                                                                 self.status, row_count, 7)
@@ -95,7 +96,7 @@ context_id = context_id['data']['ContextId']
 print(context_id)
 current_job_status = 'Pending'
 
-while current_job_status == 'Pending':
+while current_job_status != 'SUCCESS':
     current_job_status = CrpoCommon.job_status(login_token, context_id)
     current_job_status = current_job_status['data']['JobState']
     print("_________________ Proctor Evaluation is in Progress _______________________")

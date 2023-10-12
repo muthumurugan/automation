@@ -1,4 +1,4 @@
-a = {"data": [{"productId": "prd:dat-next-generation:numerical-calculations:1cdfef8c-2547-4641-b598-0618a8651fc1",
+live = {"data": [{"productId": "prd:dat-next-generation:numerical-calculations:1cdfef8c-2547-4641-b598-0618a8651fc1",
                "title": "DAT™ Next Generation: Numerical Calculations", "norms": {"defaults": [
         {"normId": "nrm:FR - Bac plus 3 et plus:57f6b58a-9fd3-4791-80b6-de11c648877a",
          "label": "FR - Bac plus 3 et plus"}], "items": [
@@ -1954,3 +1954,11 @@ a = {"data": [{"productId": "prd:dat-next-generation:numerical-calculations:1cdf
                                                    "normId": "nrm:Vocational/Technical Studies:6fa3edc8-7782-4a66-a57e-8efa9ff92459",
                                                    "label": "NL Vocational/Technical Studies"}]},
                "languages": {"default": "es-ES", "items": ["en-US", "en-ES", "fr", "en", "nl-NL", "es-ES"]}}]}
+
+
+
+for product_details in live['data']:
+    produt_id = product_details.get('productId')
+    for norm_details in product_details['norms']['items']:
+        print(norm_details)
+    print("_______________________________")
