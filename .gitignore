@@ -6,4 +6,4 @@ venv/
 PythonWorkingScripts_Output/*
 __pycache__/
 *.pyc
-chromedriver.exe
+/chromedriver.exe
