@@ -14,9 +14,9 @@ class SecurityCheck:
         self.started = datetime.datetime.now()
         self.started = self.started.strftime("%Y-%M-%d-%H-%M-%S")
         excel_read_obj.excel_read(input_path_encryption_check, 0)
-        self.crpo_headers = crpo_common_obj.login_to_crpo(cred_crpo_admin_crpodemo.get('user'),
-                                                          cred_crpo_admin_crpodemo.get('password'),
-                                                          cred_crpo_admin_crpodemo.get('tenant'))
+        self.crpo_headers = crpo_common_obj.login_to_crpo(cred_crpo_admin.get('user'),
+                                                          cred_crpo_admin.get('password'),
+                                                          cred_crpo_admin.get('tenant'))
         self.row_size = 2
         self.write_excel = xlsxwriter.Workbook(output_path_encryption_check + self.started + '.xls')
         self.ws = self.write_excel.add_worksheet()
