@@ -5,3 +5,4 @@ venv/
 /SCRIPTS/COMMON/io_user_directory.py
 __pycache__/
 *.pyc
+chromedriver.exe
