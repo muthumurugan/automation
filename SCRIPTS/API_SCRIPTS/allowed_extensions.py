@@ -25,7 +25,6 @@ class AllowedFileExtensions:
     def validate_files(self, token, excel_input):
         write_excel_object.current_status = "Pass"
         write_excel_object.current_status_color = write_excel_object.green_color
-        print(input_path_allowed_extension_files)
         print(excel_input.get('filePathName'))
         file_path = input_path_allowed_extension_files % (excel_input.get('filePathName'))
         file_name = excel_input.get('fileName')
