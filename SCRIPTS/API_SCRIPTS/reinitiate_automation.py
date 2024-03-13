@@ -74,16 +74,19 @@ excel_data = excel_read_obj.details
 crpo_headers = crpo_common_obj.login_to_crpo(cred_crpo_admin.get('user'), cred_crpo_admin.get('password'),
                                              cred_crpo_admin.get('tenant'))
 
-untag_candidates_details = [{"testUserIds": [893441, 893442, 893443]},
-                            {"testUserIds": [893444]},
-                            {"testUserIds": [893445]},
-                            {"testUserIds": [893446, 893447, 893448, 893449]}]
-crpo_common_obj.untag_candidate(crpo_headers, untag_candidates_details)
-
+untag_candidate_id_and_test_id = {}
 for data in excel_data:
-    print(data.get('loginName'), data.get('password'))
     test_id = int(data.get('primaryTestId'))
+    next_test_id = int(data.get('nextTestId'))
     candiate_id = int(data.get('candidateId'))
+    if data.get('isUntaggedFromT2') == 'Yes':
+        tu_data = crpo_common_obj.search_test_user_by_cid_and_testid(crpo_headers, candiate_id, next_test_id)
+        tu_id = tu_data.get('testUserId')
+        if tu_id != 'NotExist':
+            print(tu_id)
+            untag_candidates_details = [{"testUserIds": [tu_id]}]
+            crpo_common_obj.untag_candidate(crpo_headers, untag_candidates_details)
+
     crpo_common_obj.re_initiate_automation(crpo_headers, test_id, candiate_id)
     time.sleep(5)
     assessment_headers = AssessmentCommon.login_to_test(login_name=data.get('loginName'), password=data.get('password'),
