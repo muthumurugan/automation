@@ -12,10 +12,8 @@ class EncryptionDelete:
     def encryption_delete():
         db_connection = ams_db_connection()
         cursor = db_connection.cursor()
-
-        query = 'delete from candidates where ' \
-                'email1 = "enc_str:::aiSSXIZOrLo6zWtF/Dzi+RFKdp2BAV6o8abacVu7GYCB4Nbjqw2085XMQXBYCWk9" ' \
-                'and tenant_id=1787;'
+        query = "delete from candidates where  hp_dec(email1) COLLATE  utf8mb4_unicode_ci = 'testencryptionautomationtenant@gmail.com' and tenant_id=1787;"
+        print(query)
         cursor.execute(query)
         db_connection.commit()
         db_connection.close()

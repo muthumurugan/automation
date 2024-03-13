@@ -15,7 +15,6 @@ class CrpoCommon:
         response = requests.post(crpo_common_obj.domain + "/py/common/user/login_user/", headers=header,
                                  data=json.dumps(data), verify=False)
         login_response = response.json()
-
         headers = {"content-type": "application/json", "APP-NAME": "CRPO", "X-APPLMA": "true",
                    "X-AUTH-TOKEN": login_response.get("Token")}
         print(headers)

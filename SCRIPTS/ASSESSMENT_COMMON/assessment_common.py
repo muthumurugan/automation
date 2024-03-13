@@ -161,6 +161,7 @@ class AssessmentCommon:
                                  data=json.dumps(data, default=str), verify=False)
         print("Is Server by ECS - initiate automation", response.headers.get('X-ServedByEcs'))
         itua_resp = response.json()
+        print(response.headers.get('X-GUID'))
         print(itua_resp)
         return itua_resp
 
@@ -331,6 +332,7 @@ class AssessmentCommon:
             assessment_common_obj.common_domain + ".hirepro.in/py/assessment/htmltest/api/v1/code-compiler/",
             headers=token,
             data=json.dumps(request, default=str), verify=False)
+        print(response)
         print("Is Server by ECS - Code compiler", response.headers.get('X-ServedByEcs'))
         code_token = response.json()
         return code_token

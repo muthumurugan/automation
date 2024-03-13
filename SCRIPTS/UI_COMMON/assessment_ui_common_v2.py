@@ -112,7 +112,7 @@ class AssessmentUICommon:
             print(e)
 
     def select_answer_for_the_question(self, answer):
-        # time.sleep(1)
+        time.sleep(1)
         value = "//input[@name='answerOptions' and @value='%s']" % answer
         answered = self.driver.find_element(By.XPATH, value)
         is_answered = answered.is_selected()

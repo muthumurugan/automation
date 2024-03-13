@@ -88,6 +88,10 @@ class Excel:
                     else:
                         self.ws.write(self.write_position + 1, col_indx + 2, actual_sheet_rows[col_indx],
                                       self.red_color)
+                        # print(expected_sheet_rows[col_indx])
+                        # print(actual_sheet_rows[col_indx])
+                        # print(type(expected_sheet_rows[col_indx]))
+                        # print(type(actual_sheet_rows[col_indx]))
                     self.status = 'Fail'
                     self.color = self.red_color
                     self.overall_status = 'Fail'
