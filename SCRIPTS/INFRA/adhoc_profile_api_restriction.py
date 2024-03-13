@@ -32,14 +32,14 @@ class IsStrictValidations:
             request = {"Role": {"RoleId": 15755, "RoleName": "MS_Automation_Role", "Description": "MS Automation Role",
                                 "IsSystemRole": False, "AdhocProfileId": None, "DefaultExpiryInDays": None}}
             update_role = CrpoCommon.update_role(request, admin_token)
-            print(update_role)
+            # print(update_role)
             adhoc_token = crpo_common_obj.login_to_crpo(amsin_at_adhoc_profile.get('user'),
                                                            amsin_at_adhoc_profile.get('password'),
                                                            amsin_at_adhoc_profile.get('tenant'))
             allowed_api = CrpoCommon.auth_user_v2(adhoc_token)
             allowed_api_status = allowed_api.get('status')
             not_allowed_api = CrpoCommon.get_app_preference(adhoc_token)
-            print(not_allowed_api)
+            # print(not_allowed_api)
             not_allowed_api_status = not_allowed_api.get('status')
             # print(not_allowed_api)
             if not_allowed_api_status is None:
@@ -50,7 +50,7 @@ class IsStrictValidations:
             # print(not_allowed_api_status)
 
         else:
-            print("This is else part")
+            # print("This is else part")
             request = {"Role": {"RoleId": 15755, "RoleName": "MS_Automation_Role", "Description": "MS Automation Role",
                                 "IsSystemRole": False, "AdhocProfileId": 43, "DefaultExpiryInDays": None}}
             update_role = CrpoCommon.update_role(request, admin_token)
@@ -61,7 +61,7 @@ class IsStrictValidations:
             allowed_api = CrpoCommon.auth_user_v2(adhoc_token)
             allowed_api_status = allowed_api.get('status')
             not_allowed_api = CrpoCommon.get_app_preference(adhoc_token)
-            print (not_allowed_api)
+            # print (not_allowed_api)
             not_allowed_api_status = not_allowed_api.get('status')
             if not_allowed_api_status == 'KO':
                 not_allowed_api_status = not_allowed_api.get('error').get('errorMessage')
@@ -70,7 +70,7 @@ class IsStrictValidations:
 
         write_excel_object.compare_results_and_write_vertically(xl_data.get('expConfiguredAPIStatus'),
                                                                 allowed_api_status, self.row_count, 6)
-        print(not_allowed_api_status)
+        # print(not_allowed_api_status)
         write_excel_object.compare_results_and_write_vertically(xl_data.get('expNotConfiguredAPIStatus'),
                                                                 not_allowed_api_status, self.row_count, 8)
         write_excel_object.compare_results_and_write_vertically(current_excel_data.get('testCases'), None,

@@ -34,7 +34,7 @@ class IsStrictValidations:
             eu_is_strict_token.pop('APP-NAME')
 
         if xl_data.get('tenantName') == 'isstricteu1':
-            print(domain)
+            # print(domain)
             data = CrpoCommon.app_node_by_random_api(domain, eu_is_strict_token)
             app_node = data.get('app_node')
             api_status = data.get('get_all_resp')
@@ -52,11 +52,11 @@ class IsStrictValidations:
             else:
                 api_call_status = api_status.get('status')
         elif xl_data.get('tenantName') == 'at':
-            print(domain)
+            # print(domain)
             data = CrpoCommon.app_node_by_random_api(domain, non_eu_token)
             app_node = data.get('app_node')
             api_status = data.get('get_all_resp')
-            print(api_status)
+            # print(api_status)
             if api_status.get('status') == 'KO':
                 api_call_status = api_status.get('error').get('errorDescription')
             else:
@@ -88,7 +88,7 @@ class IsStrictValidations:
 validation_obj = IsStrictValidations()
 at_token = crpo_common_obj.login_to_crpo(mumbai_non_eu_at.get('user'), mumbai_non_eu_at.get('password'),
                                          mumbai_non_eu_at.get('tenant'))
-print(at_token)
+# print(at_token)
 pearsontesteu_token = crpo_common_obj.eu_login_to_crpo(mumbai_eu_non_strict_pearsontesteu.get('user'),
                                                     mumbai_eu_non_strict_pearsontesteu.get('password'),
                                                     mumbai_eu_non_strict_pearsontesteu.get('tenant'))
@@ -99,6 +99,6 @@ isstrict_token = crpo_common_obj.eu_login_to_crpo(mumbai_eu_strict_isstrict1.get
 excel_read_obj.excel_read(input_infra_strict_domain_validations, 0)
 excel_data = excel_read_obj.details
 for current_excel_data in excel_data:
-    print(current_excel_data)
+    # print(current_excel_data)
     validation_obj.domain_validations(at_token, pearsontesteu_token, isstrict_token, current_excel_data)
 write_excel_object.write_overall_status(testcases_count=12)
