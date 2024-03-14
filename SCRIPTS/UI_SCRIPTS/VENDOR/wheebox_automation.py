@@ -40,6 +40,7 @@ class WheeboxAutomation:
         browser1 = assess_ui_common_obj.initiate_browser(self.url, self.path)
         login_details = assess_ui_common_obj.ui_login_to_test(login_id, password)
         if login_details == 'SUCCESS':
+            time.sleep(60)
             i_agreed = assess_ui_common_obj.select_i_agree()
             if i_agreed:
                 start_test_status = assess_ui_common_obj.start_test_button_status()

@@ -23,7 +23,8 @@ class AllowedFileExtensions:
         write_excel_object.write_headers_for_scripts(1, 0, header1, write_excel_object.black_color_bold)
 
     def validate_files(self, token, excel_input):
-        print(input_path_allowed_extension_files)
+        write_excel_object.current_status = "Pass"
+        write_excel_object.current_status_color = write_excel_object.green_color
         print(excel_input.get('filePathName'))
         file_path = input_path_allowed_extension_files % (excel_input.get('filePathName'))
         file_name = excel_input.get('fileName')

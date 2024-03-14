@@ -32,7 +32,7 @@ class CodingCompiler:
         write_excel_object.write_headers_for_scripts(1, 0, header, write_excel_object.black_color_bold)
 
     def coding_compilation_check(self, excel_input):
-        print("1")
+        print(excel_input.get('testCases'))
         write_excel_object.current_status_color = write_excel_object.green_color
         write_excel_object.current_status = "Pass"
         # write_excel_object.current_status_color = write_excel_object.green_color
@@ -128,8 +128,8 @@ class CodingCompiler:
 
             write_excel_object.compare_results_and_write_vertically(excel_tc1SystemInput,
                                                                     total_tcs_results[0]['tc_system_input'], self.row_size, 17)
-            write_excel_object.compare_results_and_write_vertically(excel_input.get('tc1SystemOutput'),
-                                                                    total_tcs_results[0]['tc_system_output'], self.row_size, 19)
+            write_excel_object.compare_results_and_write_vertically(excel_input.get('tc1SystemOutput').strip(),
+                                                                    total_tcs_results[0]['tc_system_output'].strip(), self.row_size, 19)
             write_excel_object.compare_results_and_write_vertically(excel_input.get('tc1Result'),
                                                                     total_tcs_results[0]['tc_result'], self.row_size, 21)
             write_excel_object.compare_results_and_write_vertically(excel_input.get('tc1Reason'),
@@ -151,8 +151,8 @@ class CodingCompiler:
 
             write_excel_object.compare_results_and_write_vertically(excel_tc2SystemInput,
                                                                     total_tcs_results[1]['tc_system_input'], self.row_size, 33)
-            write_excel_object.compare_results_and_write_vertically(excel_input.get('tc2SystemOutput'),
-                                                                    total_tcs_results[1]['tc_system_output'], self.row_size, 35)
+            write_excel_object.compare_results_and_write_vertically(excel_input.get('tc2SystemOutput').strip(),
+                                                                    total_tcs_results[1]['tc_system_output'].strip(), self.row_size, 35)
             write_excel_object.compare_results_and_write_vertically(excel_input.get('tc2Result'),
                                                                     total_tcs_results[1]['tc_result'], self.row_size, 37)
             write_excel_object.compare_results_and_write_vertically(excel_input.get('tc2Reason'),

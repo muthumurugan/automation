@@ -2,7 +2,6 @@ from SCRIPTS.COMMON.io_path import *
 from SCRIPTS.COMMON.writeExcel import write_excel_object
 from SCRIPTS.UI_COMMON.assessment_ui_common_v2 import *
 from SCRIPTS.CRPO_COMMON.credentials import *
-import time
 from SCRIPTS.UI_SCRIPTS.assessment_data_verification import *
 
 

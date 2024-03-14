@@ -1,12 +1,13 @@
 import os
 import time
+
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 # from selenium.webdriver.common.keys import Keys
@@ -83,11 +84,13 @@ class AssessmentUICommon:
 
             tc2_chk1 = WebDriverWait(self.driver, 20).until(
                 EC.element_to_be_clickable(
-                    (By.XPATH, "/html/body/div[9]/div/div/div[2]/div[2]/assessment-terms-and-conditons/div/div/div/ul/li[5]/p/label/span")))
+                    (By.XPATH,
+                     "/html/body/div[9]/div/div/div[2]/div[2]/assessment-terms-and-conditons/div/div/div/ul/li[5]/p/label/span")))
             tc2_chk1.click()
             tc2_chk2 = WebDriverWait(self.driver, 2).until(
                 EC.element_to_be_clickable(
-                    (By.XPATH, "/html/body/div[9]/div/div/div[2]/div[2]/assessment-terms-and-conditons/div/div/div/ul/li[6]/p/label/span[2]")))
+                    (By.XPATH,
+                     "/html/body/div[9]/div/div/div[2]/div[2]/assessment-terms-and-conditons/div/div/div/ul/li[6]/p/label/span[2]")))
             tc2_chk2.click()
             self.driver.find_element(By.NAME, 'btnProctorNext').click()
 
@@ -109,7 +112,7 @@ class AssessmentUICommon:
             print(e)
 
     def select_answer_for_the_question(self, answer):
-        # time.sleep(1)
+        time.sleep(1)
         value = "//input[@name='answerOptions' and @value='%s']" % answer
         answered = self.driver.find_element(By.XPATH, value)
         is_answered = answered.is_selected()
@@ -712,7 +715,7 @@ class AssessmentUICommon:
         time.sleep(2)
         try:
             self.driver.find_element(By.XPATH,
-                                     '//*[@class="btn btn-primary py-2 px-3 ft-btn-danger btn-danger btn btn-primary"]').click()
+                                     '//*[@class="btn btn-primary py-2 px-3 ft-btn-danger btn-danger btn-focus-outline-end-test btn btn-primary"]').click()
             print("Mettl Final Submit success")
             mettl_next_section = "Mettl Final Submit Confirmation success"
             is_element_successful = True

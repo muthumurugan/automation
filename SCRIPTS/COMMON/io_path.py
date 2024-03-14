@@ -1,5 +1,6 @@
 import datetime
 import os
+
 from SCRIPTS.COMMON.io_user_directory import *
 
 path = os.getcwd()
@@ -21,6 +22,7 @@ started = started.strftime("%d-%m-%Y")
 
 # input paths
 input_path_allowed_extension = input_common_dir + 'allowed_extensions\\allowed_extensions_inputfile.xls'
+input_path_suspicious_list = input_common_dir + 'MURALITEAM\sep8.xls'
 input_path_allowed_extension_files = input_common_dir + 'allowed_extensions\\%s'
 input_path_applicant_report = input_common_dir + 'Assessment\\applicant_report\\applicantreport.xlsx'
 input_path_applicant_report_downloaded = input_common_dir + 'Assessment\\applicant_report\\downloaded\\downloadedfile.xlsx'
@@ -64,7 +66,7 @@ input_path_ui_reuse_score = input_common_dir + 'Assessment\\reuse_score.xls'
 input_path_ui_mcq_client_section_random = input_common_dir + 'UI\\Assessment\\clientside_randomization.xls'
 input_path_ui_rtc_static = input_common_dir + 'UI\\Assessment\\rtc_static.xls'
 input_path_ui_marking_schema = input_common_dir + 'UI\\Assessment\\test_marking.xls'
-#input_path_ui_fib_marking_schema = input_common_dir + 'UI\\Assessment\\test_marking_fib.xls'
+# input_path_ui_fib_marking_schema = input_common_dir + 'UI\\Assessment\\test_marking_fib.xls'
 
 # INFRA
 input_infra_strict_domain_validations = input_common_dir + "INFRA\\strict_domain.xls"
@@ -72,6 +74,7 @@ input_adhoc_profile_validations = input_common_dir + "INFRA\\adhoc_profile.xls"
 
 # output paths
 output_path_allowed_extension = output_common_dir + 'allowed_extensions\\API_allowed_extensions(' + started + ').xlsx'
+output_path_suspicious_candidates = output_common_dir + 'allowed_extensions\\suspicious(' + started + ').xlsx'
 output_path_applicant_report = output_common_dir + 'Assessment\\report\\API_applicantreport'
 output_path_2tests_chaining = output_common_dir + 'Assessment\\API_2tests_Chaining_Automation -'
 output_path_3tests_chaining = output_common_dir + 'Assessment\\API_3tests_Chaining_Automation - '

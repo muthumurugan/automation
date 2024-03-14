@@ -15,6 +15,18 @@ class CrpoCommon:
         response = requests.post(crpo_common_obj.domain + "/py/common/user/login_user/", headers=header,
                                  data=json.dumps(data), verify=False)
         login_response = response.json()
+        headers = {"content-type": "application/json", "APP-NAME": "CRPO", "X-APPLMA": "true",
+                   "X-AUTH-TOKEN": login_response.get("Token")}
+        print(headers)
+        return headers
+
+    @staticmethod
+    def eu_login_to_crpo(login_name, password, tenant):
+        header = {"content-type": "application/json"}
+        data = {"LoginName": login_name, "Password": password, "TenantAlias": tenant, "UserName": login_name}
+        response = requests.post(crpo_common_obj.eu_domain + "/py/common/user/login_user/", headers=header,
+                                 data=json.dumps(data), verify=False)
+        login_response = response.json()
 
         headers = {"content-type": "application/json", "APP-NAME": "CRPO", "X-APPLMA": "true",
                    "X-AUTH-TOKEN": login_response.get("Token")}
@@ -67,16 +79,21 @@ class CrpoCommon:
     @staticmethod
     def job_status(token, contextguid):
         request = {"ContextGUID": contextguid}
+        print(request)
         response = requests.post(crpo_common_obj.domain + "/py/crpo/api/v1/getStatusOfAsyncAPI",
                                  headers=token, data=json.dumps(request, default=str), verify=False)
         resp_dict = json.loads(response.content)
+        print(resp_dict)
         return resp_dict
 
     @staticmethod
     def upload_files(token, file_name, file_path):
+
         token.pop('content-type', None)
         token.pop('X-APPLMA', None)
         request = {'file': (file_name, open(file_path, 'rb'))}
+        print(token)
+        print(crpo_common_obj.domain)
         token.update({'x-guid': file_name + '12_20_2021_5'})
         url = crpo_common_obj.domain + '/py/common/filehandler/api/v2/upload/.doc,.rtf,.dot,.docx,' \
                                        '.docm,.dotx,.dotm,.docb,.pdf,.xls,.xlt,.xlm,.xlsx,.xlsm,.xltx,.xltm,.xlsb,.xla,.xlam,.xll,' \
@@ -103,6 +120,7 @@ class CrpoCommon:
                                  data=json.dumps(request, default=str), verify=False)
         time.sleep(10)
         tu_proctor_details = response.json()
+        print(tu_proctor_details)
         return tu_proctor_details
 
     @staticmethod
@@ -377,7 +395,6 @@ class CrpoCommon:
     @staticmethod
     def get_app_preference(domain, token):
         request = {}
-
         response = requests.post(domain + "/py/assessment/test/api/v1/getAll/",
                                  headers=token, data=json.dumps(request, default=str), verify=False)
         get_all_resp = response.json()
@@ -391,7 +408,10 @@ class CrpoCommon:
         response = requests.post(domain + "/py/assessment/test/api/v1/getAll/",
                                  headers=token, data=json.dumps(request, default=str), verify=False)
         app_node = response.headers.get('X-APP_NODE')
-        return app_node
+        get_all_resp = response.json()
+        resp = {'app_node': app_node, 'get_all_resp': get_all_resp}
+        return resp
+
 
     @staticmethod
     def update_role(request, token):

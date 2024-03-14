@@ -16,7 +16,7 @@ class ChainingDelete:
                        'where test_id in(10038,10039,10046,10047, 10081, 10082,10189,10190,10191,' \
                        '10192,10199,10200,10201,10202,10204,10205,10206, 10207,10208,10209,10210,10211,10328,10329,' \
                        '10330,10331,10338,10339,10376,10377,10378,10379,10210,10211,10402,10403)' \
-                       ' and login_time is not null and t.tenant_id in (159,1786));'
+                       ' and login_time is not null and t.tenant_id in (159,1787));'
         print(tuser_scores)
 
         cursor.execute(tuser_scores)
@@ -26,7 +26,7 @@ class ChainingDelete:
                             'where test_id in(10038,10039,10046,10047, 10081, 10082,10189,10190,10191,10192,' \
                             '10199,10200,10201,10202,10204,10205,10206, 10207,10208,10209,10210,10211,10328,10329,' \
                             '10330,10331,10338,10339,10376,10377,10378,10379,10210,10211,10402,10403) ' \
-                            'and login_time is not null and t.tenant_id in (159,1786));'
+                            'and login_time is not null and t.tenant_id in (159,1787));'
         print(tuser_login_infos)
         cursor.execute(tuser_login_infos)
         # self.conn.commit()
@@ -36,7 +36,7 @@ class ChainingDelete:
                                  'where test_id in(10038,10039,10046,10047, 10081, 10082,10189,10190,10191,10192,' \
                                  '10199,10200,10201,10202,10204,10205,10206, 10207,10208,10209,10210,10211,10328,10329,' \
                                  '10330,10331,10338,10339,10376,10377,10378,10379,10210,10211,10402,10403) ' \
-                                 'and login_time is not null and t.tenant_id in (159,1786));'
+                                 'and login_time is not null and t.tenant_id in (159,1787));'
         print(tuser_proctoring_infos)
         cursor.execute(tuser_proctoring_infos)
         # self.conn.commit()

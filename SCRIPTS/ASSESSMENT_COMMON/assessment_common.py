@@ -13,7 +13,7 @@ class AssessmentCommon:
 
     @staticmethod
     def login_to_test(login_name, password, tenant):
-        header = {"content-type": "application/json", "X-APPLMA": "true", "APP-NAME": "py3app"}
+        header = {"content-type": "application/json", "X-APPLMA": "true", "APP-NAME": "onlineassessment"}
         data = {"LoginName": login_name, "Password": password, "TenantAlias": tenant}
         response = requests.post("https://amsin.hirepro.in/py/assessment/htmltest/api/v2/login_to_test/",
                                  headers=header,
@@ -42,7 +42,7 @@ class AssessmentCommon:
     @staticmethod
     def login_to_test_v2(login_name, password, tenant, domain):
         print(login_name, password, domain)
-        header = {"content-type": "application/json", "APP-NAME": "py3app", "X-APPLMA": "true"}
+        header = {"content-type": "application/json", "APP-NAME": "onlineassessment", "X-APPLMA": "true"}
         data = {"LoginName": login_name, "Password": password, "TenantAlias": tenant}
         login_url = domain + 'htmltest/api/v2/login_to_test/'
         response = requests.post(login_url, headers=header, data=json.dumps(data), verify=False)
@@ -57,7 +57,7 @@ class AssessmentCommon:
                 test_type = 'HP'
             are_you_able_to_login = 'Yes'
             login_token = {'X-AUTH-TOKEN': login_response.get("Token"), "X-APPLMA": "true",
-                           "APP-NAME": "py3app"}
+                           "APP-NAME": "onlineassessment"}
 
         elif login_response.get('error').get('errorCode'):
             print("Login Status :- KO ")
@@ -93,7 +93,7 @@ class AssessmentCommon:
         else:
             print("The Result is not submitted")
             submit_xauth_token = None
-        submit_token = {'X-AUTH-TOKEN': submit_xauth_token, "X-APPLMA": "true", "APP-NAME": "py3app"}
+        submit_token = {'X-AUTH-TOKEN': submit_xauth_token, "X-APPLMA": "true", "APP-NAME": "onlineassessment"}
         return submit_token
 
     @staticmethod
@@ -161,6 +161,7 @@ class AssessmentCommon:
                                  data=json.dumps(data, default=str), verify=False)
         print("Is Server by ECS - initiate automation", response.headers.get('X-ServedByEcs'))
         itua_resp = response.json()
+        print(response.headers.get('X-GUID'))
         print(itua_resp)
         return itua_resp
 
@@ -233,7 +234,7 @@ class AssessmentCommon:
     @staticmethod
     def next_test_info_for_2nd_login(login_name, password, tenant, domain):
         second_login_data = {}
-        header = {"content-type": "application/json", "APP-NAME": "py3app", "X-APPLMA": "true"}
+        header = {"content-type": "application/json", "APP-NAME": "onlineassessment", "X-APPLMA": "true"}
         data = {"loginName": login_name, "password": password, "tenantAlias": tenant,
                 "debugTimeStamp": "2020-12-02T13:32:30.749Z"}
         login_url = domain + 'htmltest/api/v1/test-user-next_test/'
@@ -272,7 +273,7 @@ class AssessmentCommon:
             if not test_type:
                 test_type = 'HP'
             are_you_able_to_login = 'Yes'
-            login_token = {'X-AUTH-TOKEN': login_response.get("Token"), "X-APPLMA": "true", "APP-NAME": "py3app"}
+            login_token = {'X-AUTH-TOKEN': login_response.get("Token"), "X-APPLMA": "true", "APP-NAME": "onlineassessment"}
             test_user_infos = {'nextTestID': login_response.get("TestId"),
                                'nextTestName': login_response.get("TestName"),
                                'nextTestCandidateId': login_response.get("CandidateId"),
@@ -331,6 +332,7 @@ class AssessmentCommon:
             assessment_common_obj.common_domain + ".hirepro.in/py/assessment/htmltest/api/v1/code-compiler/",
             headers=token,
             data=json.dumps(request, default=str), verify=False)
+        print(response)
         print("Is Server by ECS - Code compiler", response.headers.get('X-ServedByEcs'))
         code_token = response.json()
         return code_token
