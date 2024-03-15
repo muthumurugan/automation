@@ -17,7 +17,8 @@ automation_proctor_eval_app_pref = {
              "isEnabled": True, "multipleFace": {"weightage": 0.4, "suspiciousThreshold": 10, "isEnabled": True}},
     "device": {"isEnabled": True,
                "computer": {"isEnabled": True, "multipleCamera": {"isEnabled": True, "count": 2, "weightage": 0.555},
-                            "singleCamera": {"isEnabled": True, "weightage": 0.222, "keywords": ["Integrated", "HP"],
+                            "singleCamera": {"isEnabled": True,
+                                             "WhitelistedCamera": {"isEnabled": True, "weightage": 0.222, "keywords": ["Integrated", "HP"]},
                                              "SuspiciousCamera": {"isEnabled": True, "keywords": ["Facetime", "Logi"],
                                                                   "weightage": 0.888}}}}}
 

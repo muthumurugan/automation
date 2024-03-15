@@ -81,6 +81,7 @@ output_path_3tests_chaining = output_common_dir + 'Assessment\\API_3tests_Chaini
 output_path_plagiarism_report = output_common_dir + 'Assessment\\plagiarism_report\\API_plagiarism_report'
 output_path_proctor_evaluation = output_common_dir + 'Assessment\\proctoring\\API_proctoring_eval100'
 output_path_dev_proctor_evaluation = output_common_dir + 'Assessment\\proctoring\\API_device_proctoring_eval'
+output_path_behaviour_proctor_evaluation_new = output_common_dir + 'Assessment\\proctoring\\API_behaviour_proctoring_eval_new'
 output_path_behaviour_proctor_evaluation = output_common_dir + 'Assessment\\proctoring\\API_behaviour_proctoring_eval'
 output_path_question_search_count = output_common_dir + 'Assessment\\search\\API_question_search_'
 output_path_question_search_boundary = output_common_dir + 'Assessment\\search\\API_question_boundary_search_'
